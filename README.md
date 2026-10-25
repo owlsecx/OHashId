@@ -18,22 +18,18 @@
 
 ## 📌 Overview
 
-Hash identifier & offline dictionary cracker
+OHashId — Hash Identifier & Cracker. It provides hash identifier — ranked candidate detection by length, charset and structural format for MD5, SHA-1, SHA-224/256/384/512, SHA-3 family, NTLM (MD4), MySQL (old/new), bcrypt, sha256crypt / sha512crypt, md5crypt, LM, CRC-32, Django PBKDF2 and argon2 — each with a confidence score, hashcat -m mode and John format name. Operators can export results (including machine-readable formats) and gate CI with severity thresholds where supported.
 
 ---
 
 ## ✨ Features
 
-- Hash identifier — ranked candidate detection by length, charset and structural format for MD5, SHA-1, SHA-224/256/384/512, SHA-3 family, NTLM (MD4), MySQL (old/new), bcrypt, sha256crypt / sha512crypt, md5crypt, LM, CRC-32, Django PBKDF2 and argon2 — each with a confidence score, hashcat -m mode and John format name.
-- Dictionary cracker for stdlib-supported fast hashes (md5, sha1, sha224, sha256, sha384, sha512, ntlm when MD4 is present, and the crypt families md5crypt / sha256crypt / sha512crypt implemented in pure Python, plus MySQL old & new).
+- Hash identifier — ranked candidate detection by length, charset and structural format for MD5, SHA-1, SHA-224/256/384/512, SHA-3 family, NTLM (MD4), MySQL (old/new), bcrypt, sha256crypt / sha512crypt, md5crypt, LM, CRC-3
+- Dictionary cracker for stdlib-supported fast hashes (md5, sha1, sha224, sha256, sha384, sha512, ntlm when MD4 is present, and the crypt families md5crypt / sha256crypt / sha512crypt implemented in pure Python, plus MySQL
 - Salt support — salt+pass, pass+salt, and crypt-style salt auto-extracted from the stored hash.
 - Rule / mangling engine — case variants, leet, digit and year suffixes, prefixes and reversal, all bounded by a configurable cap so runs stay predictable.
 - Built-in ~500-word starter wordlist for offline runs with no external list.
 - Benchmark — hashes-per-second estimate per algorithm.
-- Batch cracker — a file of hashes (hash or user:hash per line) with a cracked / uncracked summary.
-- Wordlist tools — generate from a pattern, combine, dedupe and compute statistics.
-- Export cracked pairs to TXT / CSV / JSON with an interactive save-location chooser and clipboard copy.
-- Full CLI (--identify, --crack, --batch, --wordlist, --salt, --rules, --json, -o) plus an interactive menu.
 
 ---
 
@@ -47,7 +43,9 @@ Hash identifier & offline dictionary cracker
 ## 🚀 Usage
 
 ```bash
-./OHashId
+./OHashId                                     # interactive menu
+./OHashId --json -o report.json
+./OHashId --help
 ```
 
 ---
